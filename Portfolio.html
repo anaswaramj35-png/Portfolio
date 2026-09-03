@@ -1,0 +1,1824 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anaswara | Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+
+        /* ================= GLOBAL ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 75px;
+        }
+
+        body {
+            background: #0f172a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background: rgba(15, 23, 42, 0.97);
+            padding: 12px 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 600;
+            margin-left: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #38bdf8 !important;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 5px 8px;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* ================= SECTIONS ================= */
+
+        section {
+            width: 100%;
+            min-height: 100vh;
+            padding: 100px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ================= HOME ================= */
+
+        #home {
+            padding-top: 120px;
+        }
+
+        .home {
+            width: 100%;
+            max-width: 1100px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 70px;
+        }
+
+        .home img {
+            width: 300px;
+            height: 300px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+            border: 4px solid #38bdf8;
+
+            flex-shrink: 0;
+
+            animation: zoomIn 1.2s ease;
+        }
+
+        .home-content {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .home-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .home-content h1 span {
+            color: #38bdf8;
+        }
+
+        .home-content h3 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+        }
+
+        .home-content p {
+            margin-top: 18px;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        /* ================= HERO SOCIAL ================= */
+
+        .hero-social {
+            margin-top: 25px;
+
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+        }
+
+        .hero-social a {
+            width: 42px;
+            height: 42px;
+
+            background: #9b5474;
+            color: #ffffff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            font-size: 1.1rem;
+
+            transition: 0.4s;
+
+            text-decoration: none;
+        }
+
+        .hero-social a:hover {
+            background: #ffffff;
+            color: #b86a8c;
+
+            transform: translateY(-5px);
+        }
+
+        /* ================= COMMON HEADINGS ================= */
+
+        .about h2,
+        .skills-section h2,
+        .projects-container > h2,
+        .contact-section h2 {
+            color: #38bdf8;
+
+            font-size: 2.2rem;
+
+            margin-bottom: 25px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            width: 100%;
+            max-width: 1000px;
+
+            text-align: center;
+        }
+
+        .about > p {
+            max-width: 750px;
+
+            margin: auto;
+
+            line-height: 1.9;
+
+            color: #cbd5e1;
+        }
+
+        /* ================= CV ================= */
+
+        .about-cv {
+            margin-top: 50px;
+        }
+
+        .cv-btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            padding: 12px 26px;
+
+            background: #38bdf8;
+            color: #020617;
+
+            font-weight: 600;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            transition: 0.4s;
+        }
+
+        .cv-btn:hover {
+            background: #ffffff;
+            color: #000000;
+
+            transform: translateY(-4px);
+
+            box-shadow: 0 10px 20px rgba(56, 189, 248, .4);
+        }
+
+        /* ================= CERTIFICATIONS ================= */
+
+        .about-certifications {
+            margin-top: 60px;
+        }
+
+        .about-certifications h3 {
+            color: #38bdf8;
+
+            margin-bottom: 25px;
+        }
+
+        .cert-grid {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .cert-card {
+            min-height: 75px;
+
+            background: #1e293b;
+
+            padding: 18px;
+
+            border-radius: 14px;
+
+            display: flex;
+
+            gap: 10px;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            transition: 0.4s;
+        }
+
+        .cert-card i {
+            color: #38bdf8;
+
+            font-size: 1.2rem;
+
+            flex-shrink: 0;
+        }
+
+        .cert-card p {
+            margin: 0;
+
+            font-size: 0.9rem;
+
+            line-height: 1.4;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow: 0 0 18px rgba(56, 189, 248, .5);
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills-section {
+            width: 100%;
+            max-width: 1000px;
+
+            text-align: center;
+        }
+
+        .skills-sub {
+            color: #38bdf8;
+
+            margin: 45px 0 25px;
+
+            font-size: 1.5rem;
+        }
+
+        /* ================= TECHNICAL SKILLS ================= */
+
+        .tech-skills {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns: repeat(5, 1fr);
+
+            gap: 20px;
+        }
+
+        .tech-card {
+            width: 100%;
+            height: 150px;
+
+            background: #1e293b;
+
+            border-radius: 15px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            transition: 0.4s;
+        }
+
+        .tech-card img {
+            width: 75px;
+            height: 75px;
+
+            object-fit: contain;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow: 0 0 18px rgba(56, 189, 248, .6);
+        }
+
+        /* ================= SOFT SKILLS ================= */
+
+        .soft-skills {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .soft-card {
+            height: 70px;
+
+            background: #020617;
+
+            padding: 18px;
+
+            border-radius: 14px;
+
+            display: flex;
+
+            gap: 10px;
+
+            align-items: center;
+            justify-content: center;
+
+            transition: 0.4s;
+        }
+
+        .soft-card i {
+            color: #38bdf8;
+
+            font-size: 1.3rem;
+        }
+
+        .soft-card p {
+            margin: 0;
+        }
+
+        .soft-card:hover {
+            background: #1e293b;
+
+            transform: translateY(-6px);
+        }
+
+        /* ================= PROJECTS ================= */
+
+        #projects {
+            display: block;
+
+            min-height: auto;
+        }
+
+        .projects-container {
+            width: 100%;
+            max-width: 1100px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        /* MAIN PROJECT */
+
+        .project {
+            width: 100%;
+            max-width: 850px;
+
+            min-height: 220px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #1e293b;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            margin: 30px auto;
+
+            transition: 0.4s;
+
+            text-decoration: none;
+
+            color: #ffffff;
+        }
+
+        .project:hover {
+            box-shadow: 0 0 25px #38bdf8;
+
+            transform: translateY(-5px);
+        }
+
+        .project h4 {
+            color: #38bdf8;
+
+            margin-bottom: 15px;
+
+            line-height: 1.5;
+        }
+
+        .project p {
+            color: #cbd5e1;
+
+            line-height: 1.7;
+
+            margin: 0;
+        }
+
+        /* ================= E-COMMERCE ================= */
+
+        .ecommerce-title {
+            margin-top: 70px !important;
+        }
+
+        .ecom-projects {
+            width: 100%;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+
+            margin-top: 35px;
+        }
+
+        .ecom-card {
+            width: 100%;
+
+            height: 240px;
+
+            background: #1e293b;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            transition: 0.4s;
+        }
+
+        .ecom-card:hover {
+            transform: translateY(-10px);
+
+            box-shadow: 0 0 25px #38bdf8;
+        }
+
+        .ecom-content {
+            width: 100%;
+            height: 100%;
+
+            padding: 25px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        .ecom-content h3 {
+            color: #38bdf8;
+
+            margin-bottom: 12px;
+
+            font-size: 1.35rem;
+        }
+
+        .ecom-content p {
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            color: #cbd5e1;
+
+            margin: 0;
+        }
+
+        /* ================= CONTACT ================= */
+
+        #contact {
+            min-height: auto;
+
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+
+        .contact-section {
+            width: 100%;
+            max-width: 900px;
+
+            padding: 60px 30px;
+
+            background: #020617;
+
+            border-radius: 25px;
+
+            text-align: center;
+        }
+
+        .contact-details p {
+            margin: 15px 0;
+
+            font-size: 0.95rem;
+
+            word-break: break-word;
+        }
+
+        .contact-details i {
+            color: #38bdf8;
+
+            margin-right: 10px;
+        }
+
+        /* ================= CONTACT SOCIAL ================= */
+
+        .contact-social {
+            margin-top: 30px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 18px;
+
+            flex-wrap: wrap;
+        }
+
+        .contact-social a {
+            width: 45px;
+            height: 45px;
+
+            background: #facc15;
+
+            color: #020617;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            font-size: 1.2rem;
+
+            transition: 0.4s;
+
+            text-decoration: none;
+        }
+
+        .contact-social a:hover {
+            transform: translateY(-6px);
+
+            background: #38bdf8;
+
+            color: #020617;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #020617;
+
+            padding: 20px;
+
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+
+            color: #cbd5e1;
+        }
+
+        /* ================= ANIMATION ================= */
+
+        @keyframes zoomIn {
+
+            from {
+                transform: scale(0.7);
+
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+
+                opacity: 1;
+            }
+
+        }
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 991px) {
+
+            section {
+                padding: 90px 5%;
+            }
+
+            /* Navbar */
+
+            .nav-link {
+                margin-left: 0;
+
+                padding: 10px 0;
+            }
+
+            /* Home */
+
+            .home {
+                gap: 45px;
+            }
+
+            .home img {
+                width: 250px;
+                height: 250px;
+            }
+
+            .home-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .home-content h3 {
+                font-size: 1.3rem;
+            }
+
+            /* Skills */
+
+            .tech-skills {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .soft-skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* Ecommerce */
+
+            .ecom-projects {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 768px) {
+
+            section {
+                width: 100%;
+
+                min-height: auto;
+
+                padding: 80px 20px;
+            }
+
+            /* ================= NAVBAR ================= */
+
+            .navbar {
+                padding: 10px 15px;
+            }
+
+            .navbar-brand {
+                font-size: 1.3rem;
+            }
+
+            .navbar-nav {
+                padding-top: 10px;
+            }
+
+            .nav-link {
+                margin-left: 0;
+
+                padding: 9px 0;
+
+                text-align: center;
+            }
+
+            /* ================= HOME ================= */
+
+            #home {
+                min-height: 100vh;
+
+                padding-top: 110px;
+
+                padding-bottom: 70px;
+            }
+
+            .home {
+                width: 100%;
+
+                flex-direction: column;
+
+                gap: 30px;
+
+                text-align: center;
+            }
+
+            .home img {
+                width: 210px;
+                height: 210px;
+            }
+
+            .home-content {
+                width: 100%;
+
+                max-width: 100%;
+            }
+
+            .home-content h1 {
+                font-size: 2.1rem;
+
+                line-height: 1.3;
+            }
+
+            .home-content h3 {
+                font-size: 1.15rem;
+
+                line-height: 1.5;
+            }
+
+            .home-content p {
+                font-size: 0.95rem;
+
+                line-height: 1.7;
+            }
+
+            .hero-social {
+                justify-content: center;
+            }
+
+            /* ================= HEADINGS ================= */
+
+            .about h2,
+            .skills-section h2,
+            .projects-container > h2,
+            .contact-section h2 {
+                font-size: 1.9rem;
+            }
+
+            /* ================= ABOUT ================= */
+
+            .about > p {
+                font-size: 0.95rem;
+
+                line-height: 1.8;
+
+                text-align: center;
+            }
+
+            .about-cv {
+                margin-top: 35px;
+            }
+
+            .about-certifications {
+                margin-top: 45px;
+            }
+
+            /* Certifications 1 column */
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+            }
+
+            .cert-card {
+                min-height: 65px;
+
+                padding: 16px;
+            }
+
+            /* ================= SKILLS ================= */
+
+            .skills-sub {
+                font-size: 1.35rem;
+
+                margin-top: 35px;
+            }
+
+            /* Technical skills - 2 columns */
+
+            .tech-skills {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 15px;
+            }
+
+            .tech-card {
+                width: 100%;
+
+                height: 120px;
+
+                padding: 15px;
+            }
+
+            .tech-card img {
+                width: 65px;
+
+                height: 65px;
+            }
+
+            /* Soft skills - 1 column */
+
+            .soft-skills {
+                grid-template-columns: 1fr;
+
+                gap: 15px;
+            }
+
+            .soft-card {
+                height: 65px;
+            }
+
+            /* ================= PROJECTS ================= */
+
+            #projects {
+                padding-left: 20px;
+
+                padding-right: 20px;
+            }
+
+            .project {
+                min-height: auto;
+
+                padding: 25px 18px;
+            }
+
+            .project h4 {
+                font-size: 1.1rem;
+
+                line-height: 1.5;
+            }
+
+            .project p {
+                font-size: 0.9rem;
+
+                line-height: 1.7;
+            }
+
+            /* Ecommerce title */
+
+            .ecommerce-title {
+                margin-top: 55px !important;
+            }
+
+            /* Ecommerce - 1 column */
+
+            .ecom-projects {
+                grid-template-columns: 1fr;
+
+                gap: 18px;
+            }
+
+            .ecom-card {
+                width: 100%;
+
+                height: auto;
+
+                min-height: 220px;
+            }
+
+            .ecom-content {
+                padding: 25px 20px;
+            }
+
+            .ecom-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .ecom-content p {
+                font-size: 0.9rem;
+
+                line-height: 1.7;
+            }
+
+            /* ================= CONTACT ================= */
+
+            #contact {
+                padding: 60px 20px;
+            }
+
+            .contact-section {
+                width: 100%;
+
+                padding: 40px 20px;
+
+                border-radius: 18px;
+            }
+
+            .contact-details p {
+                font-size: 0.9rem;
+
+                line-height: 1.6;
+            }
+
+            .contact-social {
+                gap: 12px;
+            }
+
+            .contact-social a {
+                width: 40px;
+
+                height: 40px;
+
+                font-size: 1rem;
+            }
+
+            /* ================= FOOTER ================= */
+
+            footer {
+                padding: 18px 10px;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+            }
+
+        }
+
+        /* =========================================================
+           SMALL MOBILE
+        ========================================================= */
+
+        @media (max-width: 400px) {
+
+            #home {
+                padding-left: 15px;
+
+                padding-right: 15px;
+            }
+
+            .home img {
+                width: 180px;
+
+                height: 180px;
+            }
+
+            .home-content h1 {
+                font-size: 1.8rem;
+            }
+
+            .home-content h3 {
+                font-size: 1rem;
+            }
+
+            .home-content p {
+                font-size: 0.9rem;
+            }
+
+            /* Skills */
+
+            .tech-skills {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 10px;
+            }
+
+            .tech-card {
+                height: 105px;
+            }
+
+            .tech-card img {
+                width: 55px;
+
+                height: 55px;
+            }
+
+            /* CV */
+
+            .cv-btn {
+                padding: 10px 20px;
+
+                font-size: 0.9rem;
+            }
+
+            /* Contact */
+
+            .contact-section {
+                padding: 35px 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+
+    <div class="container">
+
+        <a class="navbar-brand text-info fw-bold"
+           href="#home">
+
+            Anaswara
+
+        </a>
+
+
+        <button class="navbar-toggler bg-light"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse"
+             id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#home">
+
+                        Home
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#about">
+
+                        About
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#skills">
+
+                        Skills
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#projects">
+
+                        Projects
+
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#contact">
+
+                        Contact
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HOME
+========================================================= -->
+
+<section id="home">
+
+    <div class="home">
+
+        <!-- YOUR PHOTO -->
+        <img src="C:\Users\ANASWARA M J\OneDrive\Desktop\Me\WhatsApp Image 2026-05-17 at 9.16.51 PM.jpeg"
+             alt="Anaswara">
+
+
+        <div class="home-content">
+
+            <h1>
+                Hi, I'm
+                <span>Anaswara</span>
+            </h1>
+
+
+            <h3>
+                Full Stack Java Developer Intern
+            </h3>
+
+
+            <p>
+
+                I'm a Diploma in Computer Science graduate,
+                currently enhancing my skills in Full Stack Java
+                development. My passion lies in software development,
+                and I'm excited to grow in the world of web technologies.
+
+            </p>
+
+
+            <div class="hero-social">
+
+                <a href="https://github.com/anaswaramj35-png"
+                   target="_blank">
+
+                    <i class="fab fa-github"></i>
+
+                </a>
+
+
+                <a href="https://www.linkedin.com/in/anaswara-jayakumar-428270349"
+                   target="_blank">
+
+                    <i class="fab fa-linkedin-in"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section id="about">
+
+    <div class="about">
+
+        <h2>
+            About Me
+        </h2>
+
+
+        <p>
+
+            I am Anaswara from Trivandrum. I have completed my Diploma
+            in Computer Science from Muslim Association College of
+            Engineering. I am passionate about learning new technologies
+            and continuously improving my skills in software development.
+            Currently, I am focusing on full stack Java development and
+            working on real-world projects to strengthen my technical
+            knowledge. I aspire to build a successful career in the
+            technology field and contribute to innovative and impactful
+            solutions.
+
+        </p>
+
+
+        <!-- CV -->
+
+        <div class="about-cv">
+
+            <a href="C:\Users\ANASWARA M J\OneDrive\Desktop\Anaswara MJ (Updated Resume).pdf"
+               target="_blank"
+               class="cv-btn">
+
+                <i class="fas fa-download"></i>
+
+                Download CV
+
+            </a>
+
+        </div>
+
+
+        <!-- CERTIFICATIONS -->
+
+        <div class="about-certifications">
+
+            <h3>
+                Certifications
+            </h3>
+
+
+            <div class="cert-grid">
+
+
+                <div class="cert-card">
+
+                    <i class="fas fa-certificate"></i>
+
+                    <p>
+                        Diploma in Computer Science
+                    </p>
+
+                </div>
+
+
+                <div class="cert-card">
+
+                    <i class="fas fa-certificate"></i>
+
+                    <p>
+                        Full Stack Java Development
+                    </p>
+
+                </div>
+
+
+                <div class="cert-card">
+
+                    <i class="fas fa-certificate"></i>
+
+                    <p>
+                        Google Cloud Platform Fundamentals
+                    </p>
+
+                </div>
+
+
+                <div class="cert-card">
+
+                    <i class="fas fa-certificate"></i>
+
+                    <p>
+                        Unleashing AI: Building a Brighter Tomorrow
+                    </p>
+
+                </div>
+
+
+                <div class="cert-card">
+
+                    <i class="fas fa-certificate"></i>
+
+                    <p>
+                        Data Visualization using Python
+                    </p>
+
+                    </div>
+
+                    <div class="cert-card">
+
+                    <i class="fas fa-certificate"></i>
+
+                    <p>
+                        React JS
+                    </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section id="skills">
+
+    <div class="skills-section">
+
+
+        <h2>
+            My Skills
+        </h2>
+
+
+        <!-- TECHNICAL SKILLS -->
+
+        <h3 class="skills-sub">
+            Technical Skills
+        </h3>
+
+
+        <div class="tech-skills">
+
+
+            <div class="tech-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC6nBVR1r5nMogYUXdqCda2QWGbOpZkSG6TDwD6yBBtf7qU2nQdXoAuOw&s=10"
+                     alt="HTML">
+            </div>
+
+
+            <div class="tech-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5ikO3pUhUmpZ9roI0ERZPii07B8QP3tgG38JtLshG5w&s=10"
+                     alt="CSS">
+            </div>
+
+
+            <div class="tech-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiSw-oKrM5qz3eEviEadCAHnUV0qNj6BRKRBgt7kRb7O5b4G0ICz9qcpk&s=10"
+                     alt="Bootstrap">
+            </div>
+
+
+            <div class="tech-card">
+                <img src="https://www.techmonitor.ai/wp-content/uploads/sites/29/2016/06/SQL.png"
+                     alt="SQL">
+            </div>
+
+
+            <div class="tech-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqt2W2nhr2_FbnEgqREFDCQipT2XsqTRaLDBtzUoqODmeBZkvSmUWWwt5C&s=10"
+                     alt="Java">
+            </div>
+
+
+            <div class="tech-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQadga1zO7vxDzj0m0dDAeA5YpZir_fN3mpQDTOT_Om4w&s=10"
+                     alt="JSP">
+            </div>
+
+
+            <div class="tech-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzW7OwdDTZjfg84hR__9g6XgTHHdINU-e3TvZWlPaNKA&s=10"
+                     alt="JDBC">
+            </div>
+
+
+            <div class="tech-card">
+                <img src="https://javapro.io/de/wp-content/uploads/sites/1/2022/04/SpringBoot-Logo-qu.png"
+                     alt="Spring Boot">
+            </div>
+
+
+            <div class="tech-card">
+                <img src="https://miro.medium.com/1*NJSv6DGoKTloI8d8im98zg.png"
+                     alt="React">
+            </div>
+
+
+            <div class="tech-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFr0OnsqNMyvLdMPa9SWE-3pC-FnigUgi0YN9Qp649puGkr_UvcG0vQzg&s=10"
+                     alt="JavaScript">
+            </div>
+
+
+        </div>
+
+
+        <!-- SOFT SKILLS -->
+
+        <h3 class="skills-sub">
+            Soft Skills
+        </h3>
+
+
+        <div class="soft-skills">
+
+
+            <div class="soft-card">
+
+                <i class="fas fa-users"></i>
+
+                <p>
+                    Teamwork
+                </p>
+
+            </div>
+
+
+            <div class="soft-card">
+
+                <i class="fas fa-comments"></i>
+
+                <p>
+                    Communication
+                </p>
+
+            </div>
+
+
+            <div class="soft-card">
+
+                <i class="fas fa-lightbulb"></i>
+
+                <p>
+                    Problem Solving
+                </p>
+
+            </div>
+
+
+            <div class="soft-card">
+
+                <i class="fas fa-brain"></i>
+
+                <p>
+                    Quick Learner
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section id="projects">
+
+    <div class="projects-container">
+
+
+        <h2>
+            Projects
+        </h2>
+
+
+        <!-- MAIN PROJECT -->
+
+        <a href="C:\Users\ANASWARA M J\OneDrive\Desktop\Projects\stress prediction Anaswara.pdf"
+           target="_blank"
+           class="project">
+
+
+            <h4>
+                Stress Prediction And Detection Using Biomedical Data And IoT
+            </h4>
+
+
+            <p>
+
+                Stress Prediction and Detection Using Biomedical Data and
+                IoT is a system that uses biomedical signals like heart
+                rate or body temperature and IoT devices to monitor,
+                analyze, and detect a person's stress level in real time.
+
+            </p>
+
+
+        </a>
+
+
+        <!-- E-COMMERCE -->
+
+        <h2 class="ecommerce-title">
+            E-Commerce Clone Projects
+        </h2>
+
+
+        <div class="ecom-projects">
+
+
+            <!-- MEESHO -->
+
+            <div class="ecom-card">
+
+                <div class="ecom-content">
+
+                    <h3>
+                        Meesho
+                    </h3>
+
+                    <p>
+
+                        Meesho inspired e-commerce website focusing on
+                        product listing, pricing UI, and mobile-friendly
+                        shopping design.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- AMAZON -->
+
+            <div class="ecom-card">
+
+                <div class="ecom-content">
+
+                    <h3>
+                        Amazon
+                    </h3>
+
+                    <p>
+
+                        Amazon-style shopping platform with category based
+                        product cards and modern UI interactions.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FLIPKART -->
+
+            <div class="ecom-card">
+
+                <div class="ecom-content">
+
+                    <h3>
+                        Flipkart
+                    </h3>
+
+                    <p>
+
+                        Flipkart inspired responsive e-commerce UI design
+                        with hover effects and professional layout.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- W3SCHOOLS -->
+
+            <div class="ecom-card">
+
+                <div class="ecom-content">
+
+                    <h3>
+                        W3Schools
+                    </h3>
+
+                    <p>
+
+                        W3Schools is a free online learning platform that
+                        provides tutorials and examples for web technologies
+                        like HTML, CSS, JavaScript, and more.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- GODADDY -->
+
+            <div class="ecom-card">
+
+                <div class="ecom-content">
+
+                    <h3>
+                        GoDaddy
+                    </h3>
+
+                    <p>
+
+                        GoDaddy is a web services company that provides
+                        domain registration, web hosting, and website-building
+                        tools for individuals and businesses.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLASH OF CLANS -->
+
+            <div class="ecom-card">
+
+                <div class="ecom-content">
+
+                    <h3>
+                        Clash Of Clans
+                    </h3>
+
+                    <p>
+
+                        Clash of Clans is a popular mobile strategy game
+                        where players build villages, train armies, and
+                        battle other players to earn resources and trophies.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+    <div class="contact-section">
+
+
+        <h2>
+            Contact Me
+        </h2>
+
+
+        <div class="contact-details">
+
+
+            <p>
+
+                <i class="fas fa-map-marker-alt"></i>
+
+                Trivandrum, Kerala, India
+
+            </p>
+
+
+            <p>
+
+                <i class="fas fa-envelope"></i>
+
+                anaswaramj35@gmail.com
+
+            </p>
+
+
+            <p>
+
+                <i class="fas fa-phone"></i>
+
+                +91 9744196762
+
+            </p>
+
+
+        </div>
+
+
+        <!-- SOCIAL ICONS -->
+
+        <div class="contact-social">
+
+
+            <a href="https://www.linkedin.com/in/anaswara-jayakumar-428270349"
+               target="_blank">
+
+                <i class="fab fa-linkedin-in"></i>
+
+            </a>
+
+
+            <a href="https://wa.me/919744196762"
+               target="_blank">
+
+                <i class="fab fa-whatsapp"></i>
+
+            </a>
+
+
+            <a href="https://www.instagram.com/a.naswx_ra/"
+               target="_blank">
+
+                <i class="fab fa-instagram"></i>
+
+            </a>
+
+
+            <a href="https://www.youtube.com/@anaswarajayakumar5061"
+               target="_blank">
+
+                <i class="fab fa-youtube"></i>
+
+            </a>
+
+
+            <a href="https://github.com/anaswaramj35-png"
+               target="_blank">
+
+                <i class="fab fa-github"></i>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <p>
+        © 2026 Anaswara | Portfolio
+    </p>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+</body>
+
+</html>
+```
